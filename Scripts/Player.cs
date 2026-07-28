@@ -73,7 +73,7 @@ public partial class Player : CharacterBody2D
 				origin,
 				origin + direction * 1000);
 
-			query.CollisionMask = 1; // World only
+			query.CollisionMask = 1; // World only excluding by mask
 
 			var result = space.IntersectRay(query);
 
