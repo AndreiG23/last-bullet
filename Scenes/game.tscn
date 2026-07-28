@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cbed8d1wq87xt" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://bht3o0ra7caf0" path="res://Assets/Content/Tileset with cell size 64x64.png" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://bbknxhryrheas" path="res://Scenes/enemy.tscn" id="3_3dryh"]
+[ext_resource type="PackedScene" uid="uid://dwii75ix7twoa" path="res://Scenes/hostage.tscn" id="4_wowpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("1_qxrlw")
@@ -105,5 +107,18 @@ tile_set = SubResource("TileSet_ms0e4")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1607980326]
 scale = Vector2(4.255319, 4.255319)
+zoom = Vector2(0.5, 0.5)
 
 [node name="Bullets" type="Node" parent="." unique_id=1361796451]
+
+[node name="Enemy" parent="." unique_id=1785340158 instance=ExtResource("3_3dryh")]
+position = Vector2(289, -233)
+
+[node name="Enemy2" parent="." unique_id=1192938555 instance=ExtResource("3_3dryh")]
+position = Vector2(558, -70)
+
+[node name="Hostage" parent="." unique_id=2008668716 instance=ExtResource("4_wowpa")]
+position = Vector2(417, 226)
+
+[node name="Enemy3" parent="." unique_id=73541621 instance=ExtResource("3_3dryh")]
+position = Vector2(480, 282)

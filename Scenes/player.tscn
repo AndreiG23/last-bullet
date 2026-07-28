@@ -8,7 +8,7 @@
 
 [node name="Player" type="CharacterBody2D" unique_id=801834645]
 scale = Vector2(0.235, 0.235)
-collision_layer = 2
+collision_layer = 8
 script = ExtResource("1_v0iea")
 BulletScene = ExtResource("2_6t5aa")
 
@@ -25,5 +25,5 @@ debug_color = Color(0.7338165, 0.2696403, 0.831935, 0.36078432)
 position = Vector2(174.46808, 12.765958)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=2028537882]
-width = 4.0
-default_color = Color(0.05490196, 1, 1, 1)
+width = 7.0
+default_color = Color(0.1186203, 6.0644747e-06, 0.5321584, 1)

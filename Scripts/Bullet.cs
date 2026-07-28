@@ -11,23 +11,32 @@ public partial class Bullet : CharacterBody2D
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _PhysicsProcess(double delta)
+{
+    KinematicCollision2D collision =
+        MoveAndCollide(_velocity * (float)delta);
+
+    if (collision == null)
+        return;
+
+    // Hit an enemy or hostage
+    if (collision.GetCollider() is Actor actor)
     {
-        Velocity = _velocity;
-
-        KinematicCollision2D collision = MoveAndCollide(_velocity * (float)delta);
-
-        if (collision != null)
-        {
-            _velocity = _velocity.Bounce(collision.GetNormal());
-
-            Rotation = _velocity.Angle();
-
-            _bounces++;
-
-            if (_bounces >= MaxBounces)
-                QueueFree();
-        }
+        actor.TakeDamage(1);
+        return;
     }
+
+    // Bounce off walls
+    _bounces++;
+
+    if (_bounces >= MaxBounces)
+    {
+        QueueFree();
+        return;
+    }
+
+    _velocity = _velocity.Bounce(collision.GetNormal());
+    Rotation = _velocity.Angle();
+}
 
 	public void Fire(Vector2 direction)
     {
