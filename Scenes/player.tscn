@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cbed8d1wq87xt"]
+
+[ext_resource type="Script" uid="uid://2byv8v3de16h" path="res://Scripts/Player.cs" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://cidr0mt8bthil" path="res://Scenes/bullet.tscn" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://dtflq2cehoi48" path="res://Assets/Content/Player.png" id="2_cvnsp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ms0e4"]
+
+[node name="Player" type="CharacterBody2D" unique_id=801834645]
+scale = Vector2(0.235, 0.235)
+collision_layer = 2
+script = ExtResource("1_v0iea")
+BulletScene = ExtResource("2_6t5aa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1651254444]
+texture = ExtResource("2_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1786334705]
+position = Vector2(-85.10639, -1.8189894e-12)
+scale = Vector2(14.83, 15.078)
+shape = SubResource("CircleShape2D_ms0e4")
+debug_color = Color(0.7338165, 0.2696403, 0.831935, 0.36078432)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1110973507]
+position = Vector2(174.46808, 12.765958)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=2028537882]
+width = 4.0
+default_color = Color(0.05490196, 1, 1, 1)
