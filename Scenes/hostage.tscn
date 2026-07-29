@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://dwii75ix7twoa"]
 
 [ext_resource type="Script" uid="uid://uita1pa4siwf" path="res://Scripts/Hostage.cs" id="1_0h51m"]
-[ext_resource type="Texture2D" uid="uid://cy8hvolsjw1af" path="res://icon.svg" id="1_v806p"]
+[ext_resource type="Texture2D" uid="uid://de4xu2go0sxrk" path="res://Assets/Content/Hostage.png" id="2_0h51m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_afpow"]
 
 [node name="Hostage" type="CharacterBody2D" unique_id=2008668716]
+scale = Vector2(0.235, 0.235)
 collision_layer = 2
 script = ExtResource("1_0h51m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=151572633]
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("1_v806p")
-flip_v = true
+texture = ExtResource("2_0h51m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=222796580]
-scale = Vector2(2.405, 2.405)
+position = Vector2(0, 4.255319)
+scale = Vector2(10.005, 10.005)
 shape = SubResource("CircleShape2D_afpow")
