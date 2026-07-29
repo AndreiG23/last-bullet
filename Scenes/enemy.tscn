@@ -10,11 +10,12 @@ scale = Vector2(0.235, 0.235)
 collision_layer = 2
 script = ExtResource("1_1f0kj")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1140248836]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1140248836 groups=["Enemies"]]
+position = Vector2(102.32979, 0.32978463)
 texture = ExtResource("2_1f0kj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1582376946]
-position = Vector2(-102.12765, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1582376946 groups=["Enemies"]]
+position = Vector2(0.20214081, 0.32978463)
 scale = Vector2(12.35, 12.35)
 shape = SubResource("CircleShape2D_ms0e4")
 

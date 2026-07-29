@@ -9,11 +9,14 @@ public partial class Player : CharacterBody2D
 
 	public Marker2D _muzzle;
 	private Line2D _trajectory;
+	private bool wasLastBulletShot = false;
+	private Game game;
 
 	public override void _Ready()
 	{
     	_muzzle = GetNode<Marker2D>("Marker2D");
 		_trajectory = GetNode<Line2D>("Line2D");
+		game = GetTree().CurrentScene as Game;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -35,7 +38,7 @@ public partial class Player : CharacterBody2D
 
 	private void Shoot()
 	{
-		if (!Input.IsActionJustPressed("shoot"))
+		if (!Input.IsActionJustPressed("shoot") || wasLastBulletShot)
         return;
 
 		GD.Print("shoot");
@@ -49,9 +52,13 @@ public partial class Player : CharacterBody2D
 
 		bullet.Fire(direction);
 
+		bullet.OutOfBounces += game.OnBulletOutOfBounces;
+
 		GetTree().CurrentScene
     		.GetNode<Node>("Bullets")
     		.AddChild(bullet);
+		
+		wasLastBulletShot = true;
 	}
 
 	private void DrawTrajectory()
